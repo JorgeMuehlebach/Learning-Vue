@@ -3,15 +3,19 @@ import VueRouter from 'vue-router'
 import Statistics from '../views/statistics.vue'
 import MyRecs from '../views/MyRecs.vue'
 import NavBar from '../components/NavBar.vue'
+import login from '../views/login.vue'
 
 Vue.use(VueRouter);
 export default new VueRouter({
-
-
-
 routes : [
   {
     path: '/',
+    name: 'login',
+    component: login
+
+  },
+  {
+    path: '/statistics',
     name: 'statistics',
     component: Statistics
   },
