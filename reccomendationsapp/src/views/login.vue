@@ -20,6 +20,8 @@
         <v-card-actions>
           <v-btn color="success" class="mx-2">Register</v-btn>
           <v-btn color="info" class="mx-2"
+          to="/MyRecs"
+          @click="loginHide"
           >Sign in</v-btn>
         </v-card-actions>
       </v-card-text>
@@ -35,6 +37,11 @@ export default {
   name: 'login',
   components: {
     //HelloWorld
+  },
+  methods: {
+    loginHide() {
+      this.$router.options.routes[0].meta.loginState = false;
+    }
   }
 }
 
