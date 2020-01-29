@@ -7,13 +7,14 @@ import login from '../views/login.vue'
 
 Vue.use(VueRouter);
 export default new VueRouter({
+  mode: 'history',
 routes : [
   {
-    path: '/',
+    path: '/login',
     name: 'login',
     component: login,
     meta: {
-      state: true,
+      loginState: true,
     }
 
   },
