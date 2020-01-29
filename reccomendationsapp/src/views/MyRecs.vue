@@ -1,5 +1,6 @@
 <template>
   <div class="MyRecs">
+    <popup/>
     <!-- previously named home -->
     <br>
     <h1 class="subheading grey--text">My Reccomendations</h1>
@@ -28,6 +29,7 @@
 <script>
 // @ is an alias to /src
 // import LoginBar from '@/components/LoginBar.vue'
+import popup from '@/components/Popup.vue'
 
 // export default {
 //   name: 'home',
@@ -38,19 +40,17 @@
 
 export default {
   name: 'MyRecs', 
+  components: {
+    popup
+  },
   data () {
     return {
-      Reviews: [
-        { title: 'Star Wars The clone wars', person: 'John', due: '1st Jan 2019', rating: '3/5', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!'},
-        { title: 'Step brothers', person: 'John', due: '10th Jan 2019', rating: '5/5', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!'},
-        { title: 'Stranger Things', person: 'Robert', due: '20th Dec 2018', rating: '4/5', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!'},
-        { title: '27 dresses', person: 'Robert', due: '20th Oct 2018', rating: '4/5', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!'},
-      ]
+      
     }
   },
   computed: {
     myReviews(){
-      return this.Reviews.filter(review => {
+      return this.$store.state.Reviews.filter(review => {
         return review.person === this.$store.state.currentUser.userName;
       })
     }

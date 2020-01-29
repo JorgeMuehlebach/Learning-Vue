@@ -13,6 +13,10 @@
       <v-btn  text to = "/statistics"  class = "hide1 mx-2">
         Statistics 
       </v-btn>
+      <v-spacer></v-spacer>
+      <v-btn  text to = "/login"  class = "hide1 mx-2">
+        logout 
+      </v-btn>
       </template>
     </v-toolbar>
   </nav>
