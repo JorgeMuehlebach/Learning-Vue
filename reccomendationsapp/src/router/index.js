@@ -4,6 +4,7 @@ import Statistics from '../views/statistics.vue'
 import MyRecs from '../views/MyRecs.vue'
 import NavBar from '../components/NavBar.vue'
 import login from '../views/login.vue'
+import register from '../views/register.vue'
 
 Vue.use(VueRouter);
 export default new VueRouter({
@@ -34,7 +35,17 @@ routes : [
     name: 'NavBar',
     component: NavBar
 
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: register,
+    meta: {
+      loginState: true,
+    }
+
   }
+
 ]})
 
 // const router = new VueRouter({

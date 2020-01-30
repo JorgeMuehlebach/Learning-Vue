@@ -21,7 +21,7 @@
           />
         </v-form>
         <v-card-actions>
-          <v-btn color="success" class="mx-2">Register</v-btn>
+          <v-btn color="success" class="mx-2" @click="register">Register</v-btn>
           <v-btn color="info" class="mx-2"
          
           @click="checkInfo"
@@ -41,8 +41,8 @@ export default {
   data() {
     return {
       currentUser: {
-        userName: 'check',
-        passWord: 'check'
+        userName: 'username',
+        passWord: 'password'
       },
       message: false
     }
@@ -57,10 +57,15 @@ export default {
         this.$router.push({ name: "MyRecs"});
         
       }, () => {
-        this.message ='Error!'
-
+        this.message ='The username or password you have entered is incorrect'
       })
+    },
+    register() {
+      this.$router.push({ name: "register"});
+    
+      
     }
+
   }
  
 }

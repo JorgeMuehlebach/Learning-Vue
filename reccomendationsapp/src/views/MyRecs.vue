@@ -1,11 +1,11 @@
 <template>
   <div class="MyRecs">
-    <popup/>
     <!-- previously named home -->
     <br>
     <h1 class="subheading grey--text">My Reccomendations</h1>
     
     <v-container class="my-5">
+      <popup/>
       <v-expansion-panels accordion>
         <v-expansion-panel v-for="review in myReviews" :key="review.title">
           <v-expansion-panel-header class="font-weight-bold subtitle-2">
