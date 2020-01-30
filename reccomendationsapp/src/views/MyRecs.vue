@@ -5,7 +5,7 @@
     <h1 class="subheading grey--text">My Reccomendations</h1>
     
     <v-container class="my-5">
-      <popup/>
+    
       <v-expansion-panels accordion>
         <v-expansion-panel v-for="review in myReviews" :key="review.title">
           <v-expansion-panel-header class="font-weight-bold subtitle-2">
@@ -29,7 +29,7 @@
 <script>
 // @ is an alias to /src
 // import LoginBar from '@/components/LoginBar.vue'
-import popup from '@/components/Popup.vue'
+
 
 // export default {
 //   name: 'home',
@@ -41,7 +41,7 @@ import popup from '@/components/Popup.vue'
 export default {
   name: 'MyRecs', 
   components: {
-    popup
+    
   },
   data () {
     return {

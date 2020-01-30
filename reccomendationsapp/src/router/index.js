@@ -11,7 +11,7 @@ export default new VueRouter({
   mode: 'history',
 routes : [
   {
-    path: '/login',
+    path: '/',
     name: 'login',
     component: login,
     meta: {

@@ -31,18 +31,14 @@
               :rules="inputRules"
             ></v-text-field>
 
-            <v-menu max-width="290">
-              <template v-slot:activator="{ on }">
-                <v-text-field
-                  :value="formattedDate"
-                  label="Date"
-                  prepend-icon="mdi-calendar-range"
-                  v-on="on"
-                  :rules="inputRules"
-                ></v-text-field>
-              </template>
-              <v-date-picker v-model="newReview.date"></v-date-picker>
-            </v-menu>
+             <v-text-field
+              label="Date"
+              prepend-icon="mdi-calendar-range"
+              :rules="inputRules"
+              v-model="newReview.date"
+            ></v-text-field>
+
+           
             <v-btn color="success" class="mx-0 mt-3" @click="submit">
               add reccomendation</v-btn
             >
@@ -62,10 +58,11 @@ import parseISO from 'date-fns/parseISO';
 export default {
   data() {
     return {
+      dialog: true,
       newReview: {
         title: "",
         content: "",
-        date: null,
+        date: "",
         rating: ''
       },
       
@@ -80,6 +77,7 @@ export default {
       if(this.$refs.form.validate()) {
         this.newReview.person = this.$store.state.currentUser.userName;
         this.$store.state.Reviews.push(this.newReview);
+        this.dialog = false;
         //console.log(this.title, this.content)
 
       }
